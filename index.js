@@ -66,6 +66,29 @@ console.log('Suspect three is:' + suspectThree)
  * suspectThree's name is re-defined within the allSuspects method but the global variable is not changed
  */
 
+var detective = {
+  name: 'Ace Ventura',
+  pet: 'monkey'
+}
+
+var printName = function (detective) {
+  return detective.name
+}
+
+var detectiveInfo = function () {
+  detective['name'] = 'Poirot'
+  return printName(detective)
+}
+
+console.log(detectiveInfo())
+
+/**
+ * Output: Poirot
+ *
+ * detectiveInfor sets the name property of detective to 'Poirot'
+ * printName will always return 'Poirot'
+ */
+
 var murderer = 'rick'
 
 var outerFunction = function () {
